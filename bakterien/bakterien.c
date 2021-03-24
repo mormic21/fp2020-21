@@ -1,3 +1,13 @@
+/*
+ * bakterien.c
+ * simuliert das Leben eines Bakterien-Multiplikation mit 4 Generationen:
+ * G1, G2, G3, G4. Dazu wird die Funktion matrixmult aus der Datei module.c verwendet.
+ * Die einzelnen variablen Werte sind vorher festgelegt, keine Benutzereingabe. 
+ * Insgesamt werden aktuell 50 Schritte in der Zeit simuliert
+ * @author: Michael Morandell
+ * 24.03.2021
+ */
+
 #include <stdio.h>
 #include "matrix.h"
 
@@ -45,6 +55,7 @@ int main (void) {
 	//Berechnung der Bakterienkulturen in der Zeit
 	printf("G1;G2;G3;G4\n");
 	for (int i = 0; i < 50; i++) {
+		//zeilenweise ausgabe
 		printf("%f;%f;%f;%f\n", alt.matrix[0][0], alt.matrix[1][0], alt.matrix[2][0], alt.matrix[3][0]); 
 		neu = matrixmult(m, alt);
 		alt = neu;
