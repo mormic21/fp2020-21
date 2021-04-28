@@ -12,6 +12,8 @@
 int main(void) {
 	//Deklaration
 	matrix_t m1, p;
+	//skalar
+	double skalar = 1.005;
 	//groesse
 	m1.zeilen = 2;
 	m1.spalten = 2;
@@ -28,10 +30,11 @@ int main(void) {
 	//y-koordinate
 	p.matrix[1][0] = 0;
 	//Es wird 360 Mal eine ein-Grad-Drehung vollzogen.
-	for (int i = 0; i < 360; i++) {
+	for (int i = 0; i < 360*10; i++) {
 		//Ausgabe (siehe module.c)
 		printmatrix(p);
 		p = matrixmult(m1, p);
+		p = skalarmult(p, skalar);
 	}
 	return(0);
 }
